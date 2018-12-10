@@ -153,20 +153,20 @@ const render = () => {
 }
 
 const steer = (e) => {
-    switch(e.key) {
-        case "a": {
+    switch(e) {
+        case "ArrowUp": {
             speed+= 2 * elapsedTime;
             break;
         }
-        case "z": {
+        case "ArrowDown": {
             speed-= 1 * elapsedTime;
             break;
         }
-        case "x": {
+        case "ArrowLeft": {
             playerCurvature -= .7 * elapsedTime;
             break;
         }
-        case "c": {
+        case "ArrowRight": {
             playerCurvature += .7 * elapsedTime;
             break;
         }
@@ -243,7 +243,11 @@ const update = () => {
 };
 
 render();
-window.addEventListener("keypress", (e) => steer(e));
+window.addEventListener("keydown", (e) => steer(e.key));
+// document.querySelector(".left").onclick = (e) => steer("ArrowLeft");
+// document.querySelector(".right").onclick = (e) => steer("ArrowRight");
+// document.querySelector(".gas").onclick = (e) => steer("ArrowUp");
+// document.querySelector(".brake").onclick = (e) => steer("ArrowDown");
 
 setInterval(update, 1000/60);
 

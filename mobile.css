@@ -1,0 +1,13 @@
+body {
+    display: flex;
+}
+button {
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    width: 30vh;
+    align-content: center;
+    text-align: center;
+}
+.buttons {
+}
